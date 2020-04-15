@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@model IEnumerable<MVC3.Models.TownModel>
+
+<h2>Index</h2>
+
+<p>@Html.ActionLink("Tạo mới", "Insert")</p>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tr>
+                    @*<th>@Html.DisplayNameFor(model => model.ID)</th>
+                    <th>@Html.DisplayNameFor(model => model.TownName)</th>
+                    <th>@Html.DisplayNameFor(model => model.TownShip)</th>
+                    <th>@Html.DisplayNameFor(model => model.Population)</th>
+                    <th>@Html.DisplayNameFor(model => model.Area)</th>*@
+                </tr>
+                @foreach (var item in Model) {
+                    <tr>
+                        @*<td> @Html.DisplayFor(c => item.ID) </td>
+                        <td> @Html.DisplayFor(c => item.TownName) </td>
+                        <td> @Html.DisplayFor(c => item.TownShip) </td>
+                        <td> @Html.DisplayFor(c => item.Population) </td>
+                        <td> @Html.DisplayFor(c => item.Area) </td>*@
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>

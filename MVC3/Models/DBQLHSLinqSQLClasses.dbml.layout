@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.625" name="DBQLHSLinqSQLClasses">
+  <DataContextMoniker Name="/DBQLHSLinqSQLClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b0c58b2e-19c6-492c-81f8-15adcd3ce164" absoluteBounds="6.25, 6.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DBQLHSLinqSQLClassesDataContext/Account" />
+      <nestedChildShapes>
+        <elementListCompartment Id="25f22a16-6ba8-4138-badc-fe0209396dd4" absoluteBounds="6.2650000005960464, 7.21000000089407, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9021cdcb-d274-4429-9ef8-d4eb8c5f6e46" absoluteBounds="3.5, 3.625, 2, 1.5785953776041661">
+      <DataClassMoniker Name="/DBQLHSLinqSQLClassesDataContext/UserInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5d6177cd-8138-4c4c-b207-20b38ed1989c" absoluteBounds="3.5150000005960464, 4.08500000089407, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6a3436da-f318-4452-989a-4880f24e0dbd" absoluteBounds="0.75, 3.625, 2, 1.5785953776041657">
+      <DataClassMoniker Name="/DBQLHSLinqSQLClassesDataContext/BoPhan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="812f13d1-3ca2-40d0-9734-96bb63e158d7" absoluteBounds="0.76500000059604645, 4.08500000089407, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6cc0fcf5-e89e-4188-973a-38b152634e26" absoluteBounds="3.5, 0.75, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/DBQLHSLinqSQLClassesDataContext/DanhMucHS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="636c9f2a-3ea5-4b94-b5d5-f03257e1cc88" absoluteBounds="3.515, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="55abd7d8-833e-4268-b2b8-28a8a8dfc5b5" absoluteBounds="6.25, 3.25, 2, 2.347801106770834">
+      <DataClassMoniker Name="/DBQLHSLinqSQLClassesDataContext/HoSoTheoDoi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5ae8e7bc-bee3-42a1-9261-23e8b4f0380f" absoluteBounds="6.2650000005960464, 3.7100000008940697, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c04260f3-925d-47fe-9339-cb13664c573a" absoluteBounds="0.75, 6.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DBQLHSLinqSQLClassesDataContext/KhachHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="60c8fcd4-5289-45b9-b46c-3162f77c3ef6" absoluteBounds="0.76500000059604645, 7.21000000089407, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5 : 5.20359537760417); (4.5 : 7.53929768880208); (6.25 : 7.53929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBQLHSLinqSQLClassesDataContext/UserInfo/UserInfo_Account" />
+      <nodes>
+        <classShapeMoniker Id="9021cdcb-d274-4429-9ef8-d4eb8c5f6e46" />
+        <classShapeMoniker Id="b0c58b2e-19c6-492c-81f8-15adcd3ce164" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.41429768880208); (3.5 : 4.41429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBQLHSLinqSQLClassesDataContext/BoPhan/BoPhan_UserInfo" />
+      <nodes>
+        <classShapeMoniker Id="6a3436da-f318-4452-989a-4880f24e0dbd" />
+        <classShapeMoniker Id="9021cdcb-d274-4429-9ef8-d4eb8c5f6e46" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 1.44314697265625); (7.25 : 1.44314697265625); (7.25 : 3.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBQLHSLinqSQLClassesDataContext/DanhMucHS/DanhMucH_HoSoTheoDoi" />
+      <nodes>
+        <classShapeMoniker Id="6cc0fcf5-e89e-4188-973a-38b152634e26" />
+        <classShapeMoniker Id="55abd7d8-833e-4268-b2b8-28a8a8dfc5b5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.41429768880208); (6.25 : 4.41429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBQLHSLinqSQLClassesDataContext/UserInfo/UserInfo_HoSoTheoDoi" />
+      <nodes>
+        <classShapeMoniker Id="9021cdcb-d274-4429-9ef8-d4eb8c5f6e46" />
+        <classShapeMoniker Id="55abd7d8-833e-4268-b2b8-28a8a8dfc5b5" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

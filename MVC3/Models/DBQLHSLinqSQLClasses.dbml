@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLHoSo" Class="DBQLHSLinqSQLClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=HPDESKTOP\SQLEXPRESS;Initial Catalog=QLHoSo;User ID=sa;Encrypt=False;TrustServerCertificate=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLHoSoConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Account" Member="Accounts">
+    <Type Name="Account">
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDUserInfo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="UserInfo_Account" Member="UserInfo" ThisKey="IDUserInfo" OtherKey="ID" Type="UserInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserInfo" Member="UserInfos">
+    <Type Name="UserInfo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDBoPhan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="UserInfo_Account" Member="Accounts" ThisKey="ID" OtherKey="IDUserInfo" Type="Account" />
+      <Association Name="UserInfo_HoSoTheoDoi" Member="HoSoTheoDois" ThisKey="ID" OtherKey="IDUserInfo" Type="HoSoTheoDoi" />
+      <Association Name="BoPhan_UserInfo" Member="BoPhan" ThisKey="IDBoPhan" OtherKey="ID" Type="BoPhan" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BoPhan" Member="BoPhans">
+    <Type Name="BoPhan">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="IDBoPhanTrucThuoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="BoPhan_UserInfo" Member="UserInfos" ThisKey="ID" OtherKey="IDBoPhan" Type="UserInfo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DanhMucHS" Member="DanhMucHS">
+    <Type Name="DanhMucHS">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="DanhMucH_HoSoTheoDoi" Member="HoSoTheoDois" ThisKey="ID" OtherKey="IDDanhMucHS" Type="HoSoTheoDoi" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HoSoTheoDoi" Member="HoSoTheoDois">
+    <Type Name="HoSoTheoDoi">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDDanhMucHS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="IDUserInfo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThoiHanBoSung" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="NgayBoSung" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TinhTrang" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="DanhMucH_HoSoTheoDoi" Member="DanhMucHS" ThisKey="IDDanhMucHS" OtherKey="ID" Type="DanhMucHS" IsForeignKey="true" />
+      <Association Name="UserInfo_HoSoTheoDoi" Member="UserInfo" ThisKey="IDUserInfo" OtherKey="ID" Type="UserInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhachHang" Member="KhachHangs">
+    <Type Name="KhachHang">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
