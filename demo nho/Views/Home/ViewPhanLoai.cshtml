@@ -1,0 +1,55 @@
+﻿@model IEnumerable<demo_nho.Models.Category>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ViewPhanLoai</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/w2ui-1.5.rc1.min.css" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>@*http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js*@
+    <script type="text/javascript" src="~/Scripts/w2ui-1.5.rc1.min.js"></script>
+</head>
+<body>
+    <div> 
+        @ViewBag.Message
+    </div>
+        <div id="grid" style="width: 100%; height: 250px;"></div>
+    <div id="layout">
+
+    </div>
+    <script>
+
+        $(function(){
+            $('#grid').w2grid(
+                {
+                    name: 'grid',
+                    header: 'headername',
+                    show: {
+                        toolbar: true,
+                        footer: true
+                    },
+                    columns: [
+                            { field: 'recid', caption: 'recid', size: '30%' },
+                            //{ field: 'email', caption: 'Email', size: '40%' },
+                            //{ field: 'sdate', caption: 'Start Date', size: '120px' }
+                            
+                    ],
+                    records: [
+    @foreach (var item in Model) {
+        
+         @Html.Raw("{recid: "+@item.CategoryID+"},") 
+    }
+                        //{ recid: 1, fname: "Peter", lname: "Jeremia", email: 'peter@mail.com', sdate: '2/1/2010' },
+                    ]
+                }
+
+            );
+        });
+
+    </script>
+</body>
+</html>

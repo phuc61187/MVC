@@ -20,9 +20,10 @@ namespace MVC3.Models
 	using System.Linq.Expressions;
 	using System.ComponentModel;
 	using System;
-	
-	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="QLHoSo")]
+    using System.ComponentModel.DataAnnotations;
+
+
+    [global::System.Data.Linq.Mapping.DatabaseAttribute(Name="QLHoSo")]
 	public partial class DBQLHSLinqSQLClassesDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -166,6 +167,7 @@ namespace MVC3.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+        [Display(Name ="UserName")]
 		public string UserName
 		{
 			get
@@ -206,7 +208,8 @@ namespace MVC3.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int NOT NULL")]
-		public int Status
+        [Display(Name ="Tình trạng")]
+        public int Status
 		{
 			get
 			{
@@ -1201,7 +1204,8 @@ namespace MVC3.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Code", DbType="NVarChar(16) NOT NULL", CanBeNull=false)]
-		public string Code
+        [Display(Name ="Mã khách hàng")]
+        public string Code
 		{
 			get
 			{
@@ -1221,7 +1225,8 @@ namespace MVC3.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ten", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
-		public string Ten
+        [Display(Name ="Tên khách hàng")]
+        public string Ten
 		{
 			get
 			{
@@ -1241,7 +1246,8 @@ namespace MVC3.Models
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int NOT NULL")]
-		public int Status
+        [Display(Name ="Tình trạng hoạt động")]
+        public int Status
 		{
 			get
 			{

@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "NapDSKHTuExcel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Nạp danh sách khách hàng từ Excel</h2>
+<a href="~/UploadedFiles/Server/">Tải file Excel mẫu tại đây.</a>
+
+@using (Html.BeginForm("NapDSKHTuExcel", "KhachHang", FormMethod.Post, new { enctype = "multipart/form-data" })) {
+
+    <div>
+        @Html.TextBox("file", "", new { type = "file" }) <br />
+
+        <input type="submit" value="Upload File" />
+
+        @ViewBag.Message
+
+    </div>
+
+
+}  

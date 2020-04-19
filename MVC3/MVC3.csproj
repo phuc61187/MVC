@@ -131,7 +131,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\KhachHangController.cs" />
     <Compile Include="Controllers\TownController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -147,6 +147,7 @@
     <Compile Include="Models\HoSoTheoDoi.cs" />
     <Compile Include="Models\Town.cs" />
     <Compile Include="Models\UserInfos.cs" />
+    <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +155,7 @@
     <Content Include="Assets\css\sb-admin-2.min.css" />
     <Content Include="Assets\js\sb-admin-2.js" />
     <Content Include="Assets\js\sb-admin-2.min.js" />
+    <Content Include="Assets\logo\bidv-logo.svg" />
     <Content Include="Assets\vendor\bootstrap\js\bootstrap.bundle.js" />
     <Content Include="Assets\vendor\bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="Assets\vendor\bootstrap\js\bootstrap.js" />
@@ -1954,13 +1956,18 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Login\Index.cshtml" />
-    <Content Include="Views\Town\Index.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Account\Create.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\KhachHang\ThemMoi.cshtml" />
+    <Content Include="Views\KhachHang\Index.cshtml" />
+    <Content Include="Views\KhachHang\NapDSKHTuExcel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Assets\Image\" />
+    <Folder Include="UploadedFiles\Client\" />
+    <Folder Include="UploadedFiles\Server\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
