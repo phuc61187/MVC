@@ -42,6 +42,7 @@ namespace MVC3.Controllers
                     file.SaveAs(_path);
                 }
                 ViewBag.Message = "Tải file thành công";
+                //RedirectToAction()
                 return View();
             } catch {
                 ViewBag.Message = "Không thể tải file, vui lòng thử lại.";
