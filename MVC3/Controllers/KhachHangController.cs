@@ -12,6 +12,9 @@ namespace MVC3.Controllers
     {
         public DBQLHSLinqSQLClassesDataContext con = new DBQLHSLinqSQLClassesDataContext();
         // GET: KhachHang
+        public ActionResult View1() {
+            return View();
+        }
         public ActionResult Index()
         {
             var model = (from i in con.KhachHangs select i);

@@ -23,6 +23,15 @@ namespace MVC3 {
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            RegisterW2ui(bundles);
+
+        }
+
+        private static void RegisterW2ui(BundleCollection bundles) {
+            bundles.Add(new ScriptBundle("~/w2ui/js").Include(
+                  "~/Scripts/w2ui/w2ui-1.5.rc1.min.js"));
+            bundles.Add(new StyleBundle("~/w2ui/css").Include(
+                  "~/Content/w2ui/w2ui-1.5.rc1.min.css"));
         }
     }
 }

@@ -1,8 +1,9 @@
 ﻿@model IEnumerable<MVC3.Models.KhachHang>
 
+@*@Styles.Render("~/w2ui/css")*@
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Danh sách khách hàng</h2>
@@ -10,7 +11,8 @@
 <p>
     @Html.ActionLink("Thêm khách hàng mới", "ThemMoi")
 </p>
-<table class="table">
+<div id="indexGrid" style="width: 100%; height: 400px; overflow: hidden;"></div>
+@*<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Code)
@@ -43,4 +45,75 @@
     </tr>
 }
 
-</table>
+</table>*@
+<script>
+    $('#indexGrid').w2grid({
+        name: 'indexGrid',
+    columns: [
+        { field: 'fname', caption: 'First Name', size: '30%' },
+        { field: 'lname', caption: 'Last Name', size: '30%' },
+        { field: 'email', caption: 'Email', size: '40%' },
+        { field: 'sdate', caption: 'Start Date', size: '120px' },
+    ],
+    records: [
+        { recid: 1, fname: 'John', lname: 'Doe', email: 'jdoe@gmail.com', sdate: '4/3/2012' },
+        { recid: 2, fname: 'Stuart', lname: 'Motzart', email: 'jdoe@gmail.com', sdate: '4/3/2012' },
+        { recid: 3, fname: 'Jin', lname: 'Franson', email: 'jdoe@gmail.com', sdate: '4/3/2012' },
+        { recid: 4, fname: 'Susan', lname: 'Ottie', email: 'jdoe@gmail.com', sdate: '4/3/2012' },
+        { recid: 5, fname: 'Kelly', lname: 'Silver', email: 'jdoe@gmail.com', sdate: '4/3/2012' },
+        { recid: 6, fname: 'Francis', lname: 'Gatos', email: 'jdoe@gmail.com', sdate: '4/3/2012' },
+        { recid: 7, fname: 'Mark', lname: 'Welldo', email: 'jdoe@gmail.com', sdate: '4/3/2012' },
+        { recid: 8, fname: 'Thomas', lname: 'Bahh', email: 'jdoe@gmail.com', sdate: '4/3/2012' },
+        { recid: 9, fname: 'Sergei', lname: 'Rachmaninov', email: 'jdoe@gmail.com', sdate: '4/3/2012' }
+    ]
+});
+</script>
+
+
+@*@section Scripts {
+    @Scripts.Render("~/w2ui/js")  
+    <script>
+$(document).ready(function () {
+
+  $('#indexGrid').w2grid({
+    name: 'indexGrid',
+    header: 'List of order',
+    show: {      // config grid toolbar, header and footer
+      toolbar: true,
+      header: true,
+      footer: true,
+      toolbarAdd: false,
+      toolbarDelete: false,
+      toolbarEdit: false
+    },
+    columns: [   // define grid columns
+      { field: 'rec1', caption: 'ID', sortable: true, size: '20%' },
+      { field: 'rec2', caption: 'Code', sortable: true, size: '15%', render: 'date' },
+      { field: 'rec3', caption: 'Ten', sortable: true, size: '10%' },
+
+    ],
+
+    searches: [   // define search options
+      { field: 'rec1', caption: 'ID', type: 'int' },
+      { field: 'rec2', caption: 'Code', type: 'string' },
+      { field: 'rec3', caption: 'Ten', type: 'string', },
+    ],
+
+    records: [    // define record items - from model send from controller
+      @foreach (var item in Model)
+      {
+         //DateTime dStart = Convert.ToDateTime(@item.StartTime);
+         //DateTime dEnd = Convert.ToDateTime(@item.EndTime);
+
+         @: { recid: '@item.ID', rec1: '@item.Code', rec2: '@item.Ten',
+         //rec3: '@dStart.ToString("HH:mm")', rec4: '@dEnd.ToString("HH:mm")',
+              //rec5: '@d1 sec', status: '@item.Status' 
+          }
+      }
+    ], // records
+
+  });  // #indexGrid
+});    // doc ready
+
+    </script>
+}*@
