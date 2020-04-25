@@ -23,7 +23,7 @@ namespace MVC3 {
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
-            RegisterW2ui(bundles);
+            //RegisterW2ui(bundles);
 
         }
 

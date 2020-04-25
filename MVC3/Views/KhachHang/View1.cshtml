@@ -9,13 +9,60 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>View</title>
-    <link rel="stylesheet" type="text/css" href="~/Content/w2ui/w2ui-1.5.rc1.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/w2ui-1.5.rc1.min.css" />
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/w2ui/w2ui-1.5.rc1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/w2ui-1.5.rc1.min.js"></script>
 </head>
 <body>
     <div> 
     </div>
+    <div id="indexGrid" style="width: 100%; height: 250px;"></div>
+@section Scripts {
+    <script>
+$(function () {
+
+  $('#indexGrid').w2grid({
+    name: 'indexGrid',
+    header: 'List of order',
+    show: {      // config grid toolbar, header and footer
+      toolbar: true,
+      header: true,
+      footer: true,
+      toolbarAdd: false,
+      toolbarDelete: false,
+      toolbarEdit: false
+    },
+    columns: [   // define grid columns
+      { field: 'rec1', caption: 'ID', sortable: true, size: '20%' },
+      { field: 'rec2', caption: 'Code', sortable: true, size: '15%', render: 'date' },
+      { field: 'rec3', caption: 'Ten', sortable: true, size: '10%' },
+
+    ],
+
+    searches: [   // define search options
+      { field: 'rec1', caption: 'ID', type: 'int' },
+      { field: 'rec2', caption: 'Code', type: 'string' },
+      { field: 'rec3', caption: 'Ten', type: 'string', },
+    ],
+
+    records: [    // define record items - from model send from controller
+      @foreach (var item in Model)
+      {
+         //DateTime dStart = Convert.ToDateTime(@item.StartTime);
+         //DateTime dEnd = Convert.ToDateTime(@item.EndTime);
+
+         @: { recid: '@item.ID', rec1: '@item.Code', rec2: '@item.Ten',
+         //rec3: '@dStart.ToString("HH:mm")', rec4: '@dEnd.ToString("HH:mm")',
+              //rec5: '@d1 sec', status: '@item.Status'
+          }
+      }
+    ], // records
+
+  });  // #indexGrid
+});    // doc ready
+
+    </script>
+}
     <script>
     $(function(){
 
